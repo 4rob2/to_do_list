@@ -13,11 +13,12 @@ $(document).ready(function() {
     var itemName2 = $("#items2").val();
     var newTask = new Task(itemName, itemName2);
 
-    $('#toDoList').append("<li class='toDoItem'><input type='checkbox'><span>" + newTask.item + "</span></li><br><span class='toDoDescription'>" + newTask.secondary + "</span>");
+    $('#toDoList').append("<li class='toDoItem'><span>" + newTask.item + "</span><br><span class='toDoDescription'>" + newTask.secondary + "</span></li>");
 
     $('.toDoItem').last().click(function() {
-      // toggle the done or not
-      alert("Your click event handler works!");
+      newTask.ready = !newTask.ready;
+      $('.toDoItem').last().toggleClass('finished');
+
     });
   });
 });
