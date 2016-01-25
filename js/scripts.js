@@ -6,8 +6,13 @@ function Task(item, secondary) {
 
 
 $(document).ready(function() {
-  $("#subtask").submit(function() {
+  $("#subtask").submit(function(event) {
+    event.preventDefault();
+
     var itemName = $("#items").val();
-    alert(itemName);
+    var itemName2 = $("#items2").val();
+    var newTask = new Task(itemName, itemName2);
+
+    $('#toDoList').append("<li>" + newTask.item + "</li>");
   });
 });
