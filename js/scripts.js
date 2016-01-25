@@ -3,3 +3,11 @@ function Task(item, secondary) {
   this.secondary = secondary;
   this.ready = false;
 }
+
+
+$(document).ready(function() {
+  $("#subtask").submit(function() {
+    var itemName = $("#items").val();
+    alert(itemName);
+  });
+});
